@@ -8,4 +8,5 @@ Some requirements for this pipeline.
 - bcftools
 - plink
 - vcftools
+- R and R-studio (for plotting)
 - if processing many samples: high performance computing cluster
