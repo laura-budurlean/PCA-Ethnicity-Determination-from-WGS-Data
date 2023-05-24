@@ -4,7 +4,7 @@ A pipeline utilizing TCGA data and WGS data from your own samples to determine o
 
 The goal of this pipeline is to determine ancestry of an individual using sequencing data (SNPs) starting with hg38 variant called files (VCF) from those individuals. The cohort data is then combined/overlayed with 1000 genomes data and PCA analysis is performed. PCA scores are then plotted along with 1000 genomes data to provide a visual representation of where each individual falls on the overall PCA plot of ancestry.
 
-Some requirements for this pipeline.
+Some requirements for this pipeline:
 - filtered VCF files from your own samples (hg38)
 - bcftools
 - plink2
