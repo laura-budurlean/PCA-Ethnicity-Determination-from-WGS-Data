@@ -39,7 +39,7 @@ awk -F '\t' '{print $1"\t"$4-1"\t"$4}' All.geno.snps.bim > site2.bed
 array=(1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	22)
 number=${array[$SLURM_ARRAY_TASK_ID-1]}
 
-bcftools filter -T site2.bed -Oz -o chr${number}.1kg.sites.vcf.gz /gpfs/Labs/IPM/refGenomes/1000genomesdata/GRCh38/ALL.chr${number}.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz 
+bcftools filter -T site2.bed -Oz -o chr${number}.1kg.sites.vcf.gz ALL.chr${number}.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz 
 
   # 8) Combine all the chromosome files using vcftools, bgzip and index.
 vcf-concat chr*.1kg.sites.vcf.gz > merged.1kg.sites.vcf
