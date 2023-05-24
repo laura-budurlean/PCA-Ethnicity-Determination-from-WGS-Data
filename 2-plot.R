@@ -2,12 +2,12 @@
 library(ggplot2)
 library(ggrepel)
 
-# Reading in the sample info file. This file contains your own sample information and information on 1000 genomes individuals. Your samples should be added after all the 1000 genomes samples in order to show up as the top layer when plotting. The file should be CSV formatted as so: 
+# Reading in the sample info file. This is provided in the main repository and needs to be updated with your own sample information. It should contain your own sample information and information on 1000 genomes individuals. Your samples should be added after all the 1000 genomes samples in order to show up as the top layer when plotting. The file is CSV formatted as so: 
 # Sample,Family ID,Population,Population Description,Gender,Relationship,Unexpected Parent/Child ,Non Paternity,Siblings,Grandparents,Avuncular,Half Siblings,Unknown Second Order,Third Order,Other Comments
 # HG00096,HG00096,GBR,British in England and Scotland,male,,,,,,,,,,
 # your_sample_ID,your_sample_ID,your_cohort_name,,,,,,,,,,,,
 
-kg<-read.csv("C:/.../.../20130606_sample_info.csv",header=T,stringsAsFactors=F)
+kg<-read.csv("C:/.../.../sample_info.csv",header=T,stringsAsFactors=F)
 
 # Creating another column at the end of the sample_info.csv file called "SuperPopulation" which is going to have 3 letter abbreviations of super-populations from the sub-populations. These super=pops are: EAS, EUR, AFR, AMR, SAS 
 kg$SuperPopulation[kg$Population=="CHB"|kg$Population=="JPT"|kg$Population=="CHS"|kg$Population=="CDX"|kg$Population=="KHV"]<-"EAS"
